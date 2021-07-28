@@ -19,6 +19,13 @@ public class Library_first_page {
     private WebElement booksOption;
 
 
+    @FindBy(xpath = "//span[.='Users']")
+    private WebElement usersOption;
+
+
+
+
+
     public static String getTextOfTheOption(String logInAs){
         Library_first_page page=new Library_first_page();
         if (logInAs.equals("librarian")){
@@ -38,4 +45,20 @@ public class Library_first_page {
             Assert.assertTrue(page.booksOption.isDisplayed());
         }
     }
+    
+    
+    public static void chooseOptopn(String optionFromMain){
+        Library_first_page page=new Library_first_page();
+        if (optionFromMain.equals("Users")){
+            page.usersOption.click();
+        }else if (optionFromMain.equals("Dashboard")){
+            page.dashBoardOption.click();
+        }else if(optionFromMain.equals("Books")){
+            page.booksOption.click();
+        }else {
+            System.out.println("No option existing -"+optionFromMain);
+        }
+    }
+
+
 }

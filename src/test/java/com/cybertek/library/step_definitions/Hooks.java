@@ -21,7 +21,7 @@ public class Hooks {
             scenario.attach(screenshot, "image/png", scenario.getName());
         }
         System.out.println("tear down steps are being applied");
-//        Driver.closeDriver();
+        Driver.closeDriver();
     }
 //
 //    @BeforeStep
